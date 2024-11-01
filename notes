@@ -1,0 +1,10 @@
+# Notes to run proximity calculation with toy example
+
+# Obtain toolbox
+git clone https://github.com/emreg00/toolbox.git
+
+# Open python2 (install if needed)
+/Users/codosapiens/.pyenv/versions/2.7.18/bin/python
+
+/Users/codosapiens/.pyenv/versions/2.7.18/bin/pip install networkx
+/Users/codosapiens/.pyenv/versions/2.7.18/bin/pip install numpy    
