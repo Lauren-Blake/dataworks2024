@@ -3,8 +3,31 @@
 # Obtain toolbox
 git clone https://github.com/emreg00/toolbox.git
 
-# Open python2 (install if needed)
-/Users/codosapiens/.pyenv/versions/2.7.18/bin/python
+# Download programs
 
 /Users/codosapiens/.pyenv/versions/2.7.18/bin/pip install networkx
-/Users/codosapiens/.pyenv/versions/2.7.18/bin/pip install numpy    
+/Users/codosapiens/.pyenv/versions/2.7.18/bin/pip install numpy 
+# Note: I had trouble getting scipy to run in python2 so I often commented it out
+
+# Open python2 (install if needed)
+Local file: /Users/codosapiens/Desktop/projects/DRAGON/draft1/original_data
+Run python2: /Users/codosapiens/.pyenv/versions/2.7.18/bin/python
+
+# Run proximity calculation
+
+Run python2: /Users/codosapiens/.pyenv/versions/2.7.18/bin/python
+
+>>> from toolbox import wrappers
+scipy is not installed, rank-based distance methods wont work
+GenRev not found, steiner wont work
+Import error: Negex. Using keyword matching instead
+DIAMOnD not found and thus will not be available!
+>>> file_name = "data/toy.sif"
+>>> network = wrappers.get_network(file_name, only_lcc = True)
+Shrinking network to its LCC 11 15
+Final shape: 11 15
+>>> nodes_from = ["A", "C"]
+>>> nodes_to = ["B", "D", "E"]
+>>> d, z, (mean, sd) = wrappers.calculate_proximity(network, nodes_from, nodes_to, min_bin_size = 2, seed=452456)
+>>> print (d, z, (mean, sd))
+(1.0, 1.3870748387117167, (0.671, 0.2371897974197035))
