@@ -23,7 +23,7 @@ GenRev not found, steiner wont work
 Import error: Negex. Using keyword matching instead
 DIAMOnD not found and thus will not be available!
 >>> file_name = "data/toy.sif"
->>> network = wrappers.get_network(file_name, only_lcc = True)
+>>> network = wrappers.get_network(file_name, only_lcc = True)    # get_network line 120: https://github.com/emreg00/toolbox/blob/master/wrappers.py
 Shrinking network to its LCC 11 15
 Final shape: 11 15
 >>> nodes_from = ["A", "C"]
@@ -31,3 +31,15 @@ Final shape: 11 15
 >>> d, z, (mean, sd) = wrappers.calculate_proximity(network, nodes_from, nodes_to, min_bin_size = 2, seed=452456)
 >>> print (d, z, (mean, sd))
 (1.0, 1.3870748387117167, (0.671, 0.2371897974197035))
+
+
+
+
+
+
+
+
+
+# Others to run
+
+wrappers.calculate_lcc_significance(network, list(network.nodes()))
