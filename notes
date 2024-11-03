@@ -32,7 +32,8 @@ Final shape: 11 15
 >>> print (d, z, (mean, sd))
 (1.0, 1.3870748387117167, (0.671, 0.2371897974197035))
 
-
+# Calculate the closest distance from target to disease genes
+ wrappers.calculate_closest_distance(network, nodes_from, nodes_to, lengths=None)
 
 
 
