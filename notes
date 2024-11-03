@@ -13,7 +13,14 @@ git clone https://github.com/emreg00/toolbox.git
 Local file: /Users/codosapiens/Desktop/projects/DRAGON/draft1/original_data
 Run python2: /Users/codosapiens/.pyenv/versions/2.7.18/bin/python
 
-# Run proximity calculation
+Complementary exposure is combination of 2 elements: drug modules overlap disease module (proximity, z < 0) 
+but not each other (distance, sAB > 0). 
+
+
+# CALCLATE Z: Run proximity calculation
+
+# Here, I think the nodes_from are going to be the drug targets and the nodes_to are going to be the disease genes 
+# Question is what is the network? The entire "brain background"? 
 
 Run python2: /Users/codosapiens/.pyenv/versions/2.7.18/bin/python
 
@@ -35,9 +42,13 @@ Final shape: 11 15
 # Calculate the closest distance from target to disease genes
  wrappers.calculate_closest_distance(network, nodes_from, nodes_to, lengths=None)
 
+# Here, I think the nodes_from are going to be the drug targets of drug A and the nodes_to are going to be the drug targets of drug B
+# Again, question is what is the network? The entire "brain background"?
 
+# CALCULATE sAB: Calculate d where dAB - (dAA + dBB) / 2.0
 
-
+wrappers.get_separation(network, nodes_from, nodes_to)
+0.0
 
 
 
