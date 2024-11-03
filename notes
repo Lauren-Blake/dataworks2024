@@ -52,6 +52,21 @@ wrappers.get_separation(network, nodes_from, nodes_to)
 
 
 
-# Others to run
+# LCC significance
+nodes = nodes_to + nodes_from
+wrappers.calculate_lcc_significance(network, nodes)
 
-wrappers.calculate_lcc_significance(network, list(network.nodes()))
+# If you get errors about get_degree_binning, it is probably because the network is small and so the default bin size (100) is not appropriate:
+e.g.  for a small size network, wrappers.get_random_nodes(nodes,network) gives the error: 
+
+  File "<stdin>", line 1, in <module>
+  File "toolbox/wrappers.py", line 633, in get_random_nodes
+    bins = network_utilities.get_degree_binning(network, min_bin_size) 
+  File "toolbox/network_utilities.py", line 1027, in get_degree_binning
+    low_, high_, val_ = bins[-1]
+IndexError: list index out of range
+
+But wrappers.get_random_nodes(nodes,network, min_bin_size=2) or wrappers.get_random_nodes(nodes,network, min_bin_size=3) does not
+or wrappers.calculate_separation_proximity(network, nodes_from, nodes_to) is an error but wrappers.calculate_separation_proximity(network, nodes_from, nodes_to, min_bin_size = 3) doesn't 
+
+# TO DO: Pull functions of relevance for workflow
